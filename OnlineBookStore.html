@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1 style="text-align: center;">ONLINE BOOK STORE</h1>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    
+    // function for book details 
+
+
+    function Book(title, author, genre, price) {
+    this.title = title;
+    this.author = author; 
+    this.genre = genre;
+    this.price = price;
+}
+
+// function for author details 
+
+function Author(name, birthYear, nationality) {
+    this.name = name;
+    this.birthYear = birthYear;
+    this.nationality = nationality;
+}
+
+// author details 
+
+let author1 = new Author("Vyas", 2977, "Indian");
+let author2 = new Author("Roy", 2003, "Indian");
+let author3 = new Author("Stan Lee", 1922, "American");
+let author4 = new Author("J.K. Rowling", 1965, "British");
+let author5 = new Author("Sumit", 2003, "Indian");
+
+// book details 
+
+let book1 = new Book("Bhagwat Geeta", author1, "Religious Scripture", 225);
+let book2 = new Book("How to Use People", author2, "Finance", 599);
+let book3 = new Book("End Game", author3, "Sci-Fi",899);
+let book4 = new Book("Harry-Potter Series", author4, "Fantasy", 225);
+let book5 = new Book("How to stay Loyal", author5, "Romance", 199);
+
+
+
+
+console.log(book1);
+console.log(book2);
+console.log(book3);
+console.log(book4);
+console.log(book5);
+
+
+// function of getInfo of book 
+
+function GetBookInfo (title,authorName,genre,price){
+
+    console.log(`Title : ${title}\nAuthor : ${authorName.name}\nGenre : ${genre}\nTitle${title}\nPrice : ${price}`)
+
+
+     
+}
+
+// method to get book details 
+
+GetBookInfo(book1.title, book1.author, book1.genre, book1.price)
+GetBookInfo(book2.title, book2.author, book2.genre, book2.price)
+GetBookInfo(book3.title, book3.author, book3.genre, book3.price)
+GetBookInfo(book4.title, book4.author, book4.genre, book4.price)
+GetBookInfo(book5.title, book5.author, book5.genre, book5.price)
+
+
+</script>

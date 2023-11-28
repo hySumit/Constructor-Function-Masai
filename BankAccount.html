@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS</title>
+    <style>
+        *{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Constructor Function</h1>
+</body>
+</html>
+
+<script>
+
+function BankAccount (accountNumber,name,type,balance){
+    this.name = name;
+    this.Account_Number = accountNumber;
+    this.type = type;
+    this.balance = balance;
+
+}
+
+// Deposit Method
+
+function Deposit(Amount){
+    this.balance += Amount
+}
+
+// Withdraw Method 
+
+function Withdraw(Amount){
+    if(this.balance - Amount >= 500){
+        this.balance -= Amount
+    }
+    else{
+        console.log(`Insufficient Balance of ${this.name} can't Withdraw money`)
+    }
+}
+
+
+
+// checkBalance Method
+
+function Check_balance(Amount){
+    let amount = this.balance
+    console.log(`Balance of ${this.name} = ${this.balance}`)
+    return amount
+}
+
+
+// Account Active Method 
+
+function isActive(Amount){
+    // let isAct = false
+    if(this.balance >= 500){
+        // isAct = true
+        console.log(`${this.name}'s Bank Account is Active!`)
+    }
+    else{
+        console.log(`${this.name}'s Bank Account is not Active!`)
+    }
+}
+
+
+// test accounts // 
+
+let person1 = new BankAccount(1231810321234,"Sumit Kumar","current", 4000)
+console.log(person1)
+
+let person2 = new BankAccount(1121212121212,"Akriti Roy","savings", 2000)
+console.log(person2)
+
+let person3 = new BankAccount(12341847289284,"Elon Musk","current", 500)
+console.log(person3)
+
+let person4 = new BankAccount(12121212121212,"Sam Altman","current",1000)
+console.log(person4)
+
+
+// Deposit Operations on All Accounts >> 
+
+Deposit.call(person1,1000)
+Deposit.call(person2,3000)
+Deposit.call(person3,500)
+Deposit.call(person4,1000)
+
+// Withdrawal Operations on All Accounts >>
+
+Withdraw.call(person1,1000)
+Withdraw.call(person2,1000)
+Withdraw.call(person3,500)
+Withdraw.call(person4,500)
+
+// Check Balance Operations on all Accounts >>
+
+Check_balance.call(person1)
+Check_balance.call(person2)
+Check_balance.call(person3)
+Check_balance.call(person4)
+
+// is account Active operation on All Accounts >>
+isActive.call(person1)
+isActive.call(person2)
+isActive.call(person3)
+isActive.call(person4)
+
+
+
+</script>
