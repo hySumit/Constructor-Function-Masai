@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Game</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Simulation Game</h1>
+</body>
+</html>
+<script>
+    // prototype of a Vehical 
+
+    function Vehical(brand,model,fuelType,speed){
+        this.brand = brand,
+        this.model = model,
+        this.fuelType = fuelType,
+        this.speed = speed;
+
+    }
+    
+    // function to control speed 
+
+    Vehical.prototype.accelerate = function (){
+            this.speed ++
+        }
+    Vehical.prototype.stop = function (){
+            this.speed --
+        }
+    Vehical.prototype.refuel = function (){
+            console.log("Vehical is being Refueling");
+        }
+
+    // Function for Car 
+    
+    function Car(brand,model,fuelType,speed,wheels){
+        Vehical.call(this,brand,model,fuelType,speed)
+        this.numberOfWheels = wheels
+    }
+
+    Car.prototype.honk = function(){
+        console.log("Honking Sound")
+    }
+
+    // Airlplane function 
+
+    function Airplane(brand,model,fuelType,speed,numberOfEngines,hasLandingGear){
+        Vehical.call(this,brand,model,fuelType,speed);
+        this.numberOfEngines = numberOfEngines
+        this.hasLandingGear = hasLandingGear
+    }
+    Airplane.prototype.takeOff = function(){
+        console.log("The Flight is Taking_oFf");
+    }
+
+    // setting up objects 
+
+    Object.setPrototypeOf(Airplane.prototype,Vehical.prototype)
+    
+    Object.setPrototypeOf(Car.prototype,Vehical.prototype)
+    
+
+    // details for Vehicals  
+
+    let aero1 = new Airplane("AirIndia","A320neo","Diesel",1200,2,4)
+    console.log(aero1)
+
+    let Vehical_1 = new Vehical("Mercedes","AMG23","Petrol",440)
+    console.log(Vehical_1);
+    let mahindra = new Car("Mahindra","Bolero","Diesel",180,4)
+
+    
+    
+  
+    
+    mahindra.accelerate()
+    aero1.accelerate()
+    console.log(mahindra)
+    mahindra.honk()
+    aero1.takeOff()
+    mahindra.stop()
+
+
+
+</script>
+
+
+<!-- v1.brake()
+v2.accelerate(40)
+console.log(v2)
+c2.honk()
+console.log(c1)
+a2.takeoff()
+console.log(a2) -->
