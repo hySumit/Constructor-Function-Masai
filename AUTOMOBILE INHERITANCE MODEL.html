@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata Motors</title>
+</head>
+<body>
+    <h1 style="text-align: center;">AUTOMOBILE <br> INHERITANCE MODEL</h1>
+</body>
+</html>
+
+<script>
+// Model
+// type
+// fuel type
+// sitting capacity 
+// engien 
+// color
+// weight 
+function Tata_harrier(model,weight,type,fuelType,engine,seatingCapacity){
+    this.model = model;
+    this.weight = weight; 
+    this.type=  type; 
+    this.fuelType = fuelType;
+    this.engine=  engine; 
+    this.seatingCapacity = seatingCapacity; 
+}
+
+Tata_harrier.prototype.Tata_Tigor = function(model,engine,color,fuelType,type,weight){
+this.Tata_Tigor.model =  model 
+this.Tata_Tigor.engine = engine 
+this.Tata_Tigor.color =  color 
+this.Tata_Tigor.fuelType =  fuelType 
+this.Tata_Tigor.type = type
+this.Tata_Tigor.weight = weight
+
+}
+
+let Vehical_1 = new Tata_harrier("Tata Harrier XZA",1650,"SUV","Diesel","Multijet L4 Turbo",5)
+
+Vehical_1.Tata_Tigor("Tata_Tigor XME","V12","Black","Petrol","Sedan","1250")
+
+console.log(Vehical_1)
+
+console.log(`Model : ${Vehical_1.Tata_Tigor.model}
+\nType : ${Vehical_1.Tata_Tigor.type}
+\nColor : ${Vehical_1.Tata_Tigor.color}
+\nSeating Capacity : ${Vehical_1.seatingCapacity}
+\nFuel Type : ${Vehical_1.Tata_Tigor.fuelType}
+\nEngine : ${Vehical_1.Tata_Tigor.engine},
+\nWeight : ${Vehical_1.Tata_Tigor.weight}`
+)
+</script>
